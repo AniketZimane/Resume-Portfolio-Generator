@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF Generation Test</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    .resume {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+    }
+    .header {
+      background-color: #3B82F6;
+      color: white;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .btn {
+      background-color: #3B82F6;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="resume" id="resume">
+    <div class="header">
+      <h1>John Doe</h1>
+      <p>Software Developer</p>
+    </div>
+    <div>
+      <h2>Experience</h2>
+      <p><strong>Senior Developer</strong> at Tech Solutions Inc.</p>
+      <p>2019 - Present</p>
+      <p>Leading development of web applications using React and Node.js.</p>
+    </div>
+  </div>
+  
+  <button class="btn" onclick="generatePDF()">Download PDF</button>
+
+  <script>
+    function generatePDF() {
+      const element = document.getElementById('resume');
+      const options = {
+        margin: 10,
+        filename: 'resume.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+      
+      html2pdf().from(element).set(options).save();
+    }
+  </script>
+</body>
+</html>

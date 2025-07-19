@@ -1,0 +1,3 @@
+@echo off
+echo Seeding database with initial data...
+node seed.js
