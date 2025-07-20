@@ -108,3 +108,4 @@ npm run dev
 - The application can run without a backend connection in development mode
 - Mock data is provided for testing purposes
 - PDF generation works client-side using html2pdf.js
+- Attached sccreen shot https://drive.google.com/drive/folders/1Tay5MA9SU6uW-xke__BwULQh2v_BET1W?usp=sharing
